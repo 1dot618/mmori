@@ -7,4 +7,4 @@ Those who purchase the book can access all of the examples from the book at the 
 
 All examples use the [jQuery JavaScript library](http://jquery.com).
 
-These code examples use the [EnhanceJS framework](https://github.com/filamentgroup/EnhanceJS) for applying progressive enhancement based on browser capabilities testing.
+These code examples use the [EnhanceJS framework](https://github.com/filamentgroup/EnhanceJS) for applying progressive enhancement based on browser capabilities testing.# mmori
