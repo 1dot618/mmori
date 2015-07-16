@@ -23,11 +23,11 @@ function fnIdes() {
 	
 	document.getElementById("btnIdes").style.display="none";
 	document.getElementById("pUvod").style.display="none";
-	document.getElementById("som").setAttribute("readonly");
+ 	$("#som").prop("readonly", true);
 //	document.getElementById("narodeny").setAttribute("readonly");
 //	document.getElementById("narodeny_mesiac").setAttribute("readonly");
-	document.getElementById("narodeny_rok").setAttribute("readonly");
-	document.getElementById("vek").setAttribute("readonly");
+	$("#narodeny_rok").prop("readonly", true);
+	$("#vek").prop("readonly", true);
 	document.getElementById("divPocty").style.display="inline";
 	document.getElementById("btnPocty").focus();
 	}
