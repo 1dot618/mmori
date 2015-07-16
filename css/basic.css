@@ -1,0 +1,74 @@
+/* page styles
+***************************************************** */
+
+body { 
+	background-color:black; 
+	color:white; 
+	font-family: "Segoe UI", Frutiger,Tahoma,Helvetica,"Helvetica Neue", Arial, sans-serif;
+	}
+
+h1 { font-size:3em;	} 
+
+p {	font-size:2.5em; }
+
+p, h1, h2 {	text-align:center; }
+
+#btnIdes { font-size:1em; }
+
+/* table styles
+***************************************************** */
+
+table {
+	border-collapse: collapse; 
+	font-size: 1.2em;
+	}
+
+#tblVstup {
+	border:0px;
+	margin:0 auto;
+	}
+
+#tblVstup td, th { padding:2px 5px;	}
+
+#tblPocty {
+	border: 1px solid #ddd;
+	margin:0 auto;
+	}
+
+#tblPocty td {
+	border: 1px solid #ddd;
+	padding:5px 5px;
+	text-align: center; 
+	font-weight: normal;
+	width: 13%;
+	}
+
+#tblPocty th {
+	border: 1px solid #ddd;
+	padding:5px 5px;
+	text-align: center; 
+	font-weight: normal;
+	width: 13%;
+	height:15px;
+	font-size: 0.8em;
+	}
+
+table.accessHide { position: absolute; left: -999999px; }
+
+/* class styles
+***************************************************** */
+
+.button {
+	display:block;
+	margin:0 auto;
+	font-size: 1.2em;
+	}
+
+.label	{ text-align:right;	}
+
+.male { font-size: 0.8em } 
+
+.visualize{ 
+	font-size: 60%;
+	float:left;
+	}

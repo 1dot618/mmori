@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Fuky Huky</title>
+	<link href="css/basic.css" type="text/css" rel="stylesheet" />
+
+<!-- toto je nutné v ostrej verzii zapoznámkovať !!!
+	<link rel="stylesheet" type="text/css" href="css/visualize.css">
+	<link rel="stylesheet" type="text/css" href="css/visualize-light.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/visualize.jQuery.js"></script>
+	<script src="js/fukyhuky.js"></script>
+	<script>
+		window.onload = function() {
+  		var input = document.getElementById("btnDalej").focus();
+		}
+	</script>
+potiaľto-->	
+
+<!-- toto je nutné v ostrej verzii odpoznámkovať !!! -->
+	<script type="text/javascript" src="http://filamentgroup.github.com/EnhanceJS/enhance.js">
+		// about enhance: http://www.filamentgroup.com/lab/introducing_enhancejs_smarter_safer_apply_progressive_enhancement/
+	</script>
+	
+	<script type="text/javascript">
+		enhance({						// Run capabilities test
+			loadScripts: [
+				{src: 'js/excanvas.js', iecondition: 'all'},
+				'js/jquery.js',
+				'js/visualize.jQuery.js',
+				'js/fukyhuky.js'
+			],
+			loadStyles: [
+				'css/visualize.css',
+				'css/visualize-light.css'
+			]	
+		}); 
+    </script>
+ <!--potiaľto -->
+	
+</head>
+	
+<body>
+	<endora></endora>
+	<h1>MEMENTO MORI</h1>
+	<hr>
+	
+	<div id="divMemento">
+		<!-- Úvodný text -->
+		<p>
+			Memento mori je latinské príslovie, ktoré znamená Pamätaj, že musíš zomrieť. 
+			<!--Používalo sa aj vo variante Memento mortis - Pamätaj na smrť.-->
+			Bolo inšpiráciou pre mnohé umelecké diela, ktoré mali divákovi pripomínať jeho smrteľnosť.
+			<br> 
+			(Citát: <a href="http://sk.wikipedia.org/wiki/Memento_mori">Wikipedia</a>)
+			<br><br>
+			Zamyslel si sa však niekedy, nad vlastnou pominuteľnosťou ?
+			<br>
+		</p>
+	
+		<!-- tlačítkom sa zobrazí vstupný formulár -->
+		<button onclick="fnDalej()" class="button" id="btnDalej" type="button">Ďalej</button>
+	</div>
+	
+	<div id="divUvod" style="display:none">
+		<!-- Vstupný formuár -->
+		<h2 id="pUvod">Najprv nám prezraď niečo o sebe ...</h2>
+	
+		<form name="frmVstup">
+			<table id="tblVstup">
+				<tbody>
+					<tr>
+						<td class="label">Voláš sa</td>
+						<td><input type="text" name="som" id="som"/></td>
+					</tr>
+<!--				<tr>
+						<td class="label">Narodil si sa (mesiac, rok)</td>
+						<td><input type="month" name="narodeny" id="narodeny"/></td>
+					</tr>
+-->
+					<tr>
+						<td class="label">Narodil si sa v roku</td>
+<!--					</tr>
+					<tr>
+						<td>... mesiac</td>
+						<td><input type="number" name="narodeny_mesiac" id="narodeny_mesiac"/></td>
+					</tr>
+					<tr>
+						<td>... rok</td>
+-->
+						<td><input type="number" name="narodeny_rok" id="narodeny_rok"/></td>
+					</tr>
+					<tr>
+						<td class="label">Chceš sa dožiť</td>
+						<td><input type="number" name="vek" id="vek"/> rokov</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button onclick="fnIdes()" type="button" id="btnIdes">Ďalej</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	
+	<div id="divPocty" style="display:none">
+		<!-- Po kliku na tlačítko btnIdes zobrazí zostávajúcu dĺžku života ... -->
+		<h2 id="pZostava"></h2>
+	
+		<!-- ... a vstupné info o ďalšej sekcii -->
+		<p id="pPocty">
+			Takto sucho podané je to iba nič nehovoriace číslo.
+			Vieš si však <b>naozaj</b> predstaviť, koľko toho ešte máš pred sebou ?
+			<br>
+			Ako pomôcku sme zvolili parameter, ktorý si blízky každému z nás. Týmto parametrom je sex.
+			<br>
+		</p>
+		
+		<!-- tlačítkom sa zobrazí ... -->
+		<button onclick="fnPocty()" type="button" id="btnPocty" class="button">Ďalej</button>
+	</div>
+	
+	<div id="divFuky" style="display:none">
+		<!-- ... vstupné info o FukyHuky ... -->
+		<p>
+			Tabuľka poniže uvádza priemerné počty sexuálnych aktov za rok v bežnej populácii euro-amerického typu.
+			(Zdroj: <a href="http://www.kinseyinstitute.org/resources/FAQ.html#frequency">The Kinsey Institute, 2009</a>)
+		</p>
+			
+		<!-- ... a tabuľka 'tblPocty' ... -->
+		<table id="tblPocty">
+			<thead>
+				<tr>
+					<td scope="row">Vek od-do</td>
+					<th scope="col"><p id="oddo1">18-29</p></th>
+					<th scope="col"><p id="oddo2">29-39</p></th>
+					<th scope="col"><p id="oddo3">39-49</p></th>
+					<th scope="col"><p id="oddo4">49-59</p></th>
+					<th scope="col"><p id="oddo5">59-69</p></th>
+					<th scope="col"><p id="oddo6">69-79</p></th>
+				</tr>
+			</thead>
+			<tbody>	
+				<tr>
+					<th scope="row">Počet</th>
+					<td id="pocet1">112</td>
+					<td id="pocet2">86</td>
+					<td id="pocet3">69</td>
+					<td id="pocet4">15</td>
+					<td id="pocet5">3</td>
+					<td id="pocet6">0</td>
+				</tr>	
+			</tbody>
+		</table>
+			
+		<!-- ... a záverečné info o FukyHuky -->
+		<p class="male">
+			Hodnoty "Počet" v tabuľke môžeš ľubovoľne upraviť podľa Tvojich zvyklostí. 
+			Jednoducho klikni do príslušného políčka, hodnotu prepíš a stlač TAB.
+		</p>
+		
+		<p id="pSkore">	
+			Klikom na tlačítko "Ďalej" sa zobrazí Tvoje skóre v tejto oblasti.
+			<br>
+		</p>
+		
+		<button onclick="fnGrafy()" type="button" id="btnGrafy" class="button">Ďalej</button>
+	</div>
+	
+	<div id="divZnova" style="display:none">
+		<h2>Už si vieš lepšie predstaviť, koľko toho máš ešte pred sebou ? Však Ťa to zaskočilo !
+			<br>
+			Preto ži, miluj a rob správne veci ! Ihneď !!!
+		</h2>
+		<button onclick="fnZnova()" type="button" id="btnZnova" class="button">Znova ?</button>
+	</div>
+	<hr>
+	<!-- toto sa aktuálne nezobrazuje, ale slúži ako zdroj dát pre grafy
+	<p>Toto je tabuľka sexov (tblFukyHuky), podklad pre metódu "visualise"</p>
+ 	-->
+	<table id="tblFukyHuky" style="display:none">
+		<thead>
+			<tr>
+				<td scope="row">Vek od-do</td>
+				<th scope="col">18-29</th>
+				<th scope="col">29-39</th>
+				<th scope="col">39-49</th>
+				<th scope="col">49-59</th>
+				<th scope="col">59-69</th>
+				<th scope="col">69-79</th>
+			</tr>
+		</thead>
+		<tbody>	
+			<tr>
+				<th scope="row">Doteraz</th>
+				<td><p id="pocetDoterazSpolu1"></p></td>
+				<td><p id="pocetDoterazSpolu2"></p></td>
+				<td><p id="pocetDoterazSpolu3"></p></td>
+				<td><p id="pocetDoterazSpolu4"></p></td>
+				<td><p id="pocetDoterazSpolu5"></p></td>
+				<td><p id="pocetDoterazSpolu6"></p></td>
+			</tr>
+			<tr>
+				<th scope="row">Odteraz</th>
+				<td><p id="pocetEsteSpolu1"></p></td>
+				<td><p id="pocetEsteSpolu2"></p></td>
+				<td><p id="pocetEsteSpolu3"></p></td>
+				<td><p id="pocetEsteSpolu4"></p></td>
+				<td><p id="pocetEsteSpolu5"></p></td>
+				<td><p id="pocetEsteSpolu6"></p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- <p>Toto je tabuľka rokov (tblRoky)</p> -->
+	<table id="tblRoky" style="display:none">
+		<thead>
+			<tr>
+				<td scope="row">Vek od-do</td>
+				<th scope="col">18-29</th>
+				<th scope="col">29-39</th>
+				<th scope="col">39-49</th>
+				<th scope="col">49-59</th>
+				<th scope="col">59-69</th>
+				<th scope="col">69-79</th>
+			</tr>
+		</thead>
+		<tbody>	
+			<tr>
+				<th scope="row">Roky</th>
+				<td><p id="rokyDoteraz1"></p></td>
+				<td><p id="rokyDoteraz2"></p></td>
+				<td><p id="rokyDoteraz3"></p></td>
+				<td><p id="rokyDoteraz4"></p></td>
+				<td><p id="rokyDoteraz5"></p></td>
+				<td><p id="rokyDoteraz6"></p></td>
+			</tr>
+			<tr>
+				<th scope="row">Roky</th>
+				<td><p id="rokyEste1"></p></td>
+				<td><p id="rokyEste2"></p></td>
+				<td><p id="rokyEste3"></p></td>
+				<td><p id="rokyEste4"></p></td>
+				<td><p id="rokyEste5"></p></td>
+				<td><p id="rokyEste6"></p></td>
+			</tr>
+		</tbody>
+	</table>
+
+<!--
+	<table id="fukyhuky_kumul">
+		<caption>Fuky Huky - kumulatívne</caption>
+		<thead>
+			<tr>
+				<td scope="row">Vek od-do</td>
+				<th scope="col">18-29</th>
+				<th scope="col">29-39</th>
+				<th scope="col">39-49</th>
+				<th scope="col">49-59</th>
+				<th scope="col">59-69</th>
+				<th scope="col">69-79</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Počet doteraz - kumul.</th>
+				<td><p id="pocetDoterazKumul1"></p></td>
+				<td><p id="pocetDoterazKumul2"></p></td>
+				<td><p id="pocetDoterazKumul3"></p></td>
+				<td><p id="pocetDoterazKumul4"></p></td>
+				<td><p id="pocetDoterazKumul5"></p></td>
+				<td><p id="pocetDoterazKumul6"></p></td>
+			</tr>
+			<tr>
+				<th scope="row">Počet ešte - kumul.</th>
+				<td><p id="pocetEsteKumul1"></p></td>
+				<td><p id="pocetEsteKumul2"></p></td>
+				<td><p id="pocetEsteKumul3"></p></td>
+				<td><p id="pocetEsteKumul4"></p></td>
+				<td><p id="pocetEsteKumul5"></p></td>
+				<td><p id="pocetEsteKumul6"></p></td>
+			</tr>
+		</tbody>
+	</table>
+-->
+	
+</body>
+</html>
